@@ -33,9 +33,6 @@ struct fmt
 };
 
 
-
-
-
 /**
  * typedef struct fmt fmt_t - Struct op
  *
@@ -49,7 +46,7 @@ int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****** FUNCTIONS ******/
-/* Funtions to print chars and strings */
+/* Functions to print chars and strings */
 
 int print_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -79,12 +76,12 @@ char buffer[], int flags, char flag_ch, int width, int precision, int size);
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funcion to print memory address */
+/* Function to print memory address */
 
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-/* Funciotns to handle other specifiers */
+/* Functions to handle other specifiers */
 
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
