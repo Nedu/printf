@@ -17,7 +17,7 @@ int _putchar(char c)
  * _printf - I'm not going anywhere. You can print that wherever you want to.
  * I'm here and I'm a Spur for life
  * Function that produces output according to a format.
- * @format: list of types of arguments passed to the function
+ * @format: character strings
  *
  * Author - Nedu Robert
  * Return: Returns the number of characters printed
@@ -25,19 +25,43 @@ int _putchar(char c)
  */
 int _printf(const char *format, ...)
 {
+	specifier_t specifiers[] = {
+		{"%c", specifier_char},
+		// {"s", specifier_char},
+		{"%d", specifier_int},
+		{"%i", specifier_int},
+		// {"b", specifier_char},
+	};
 	va_list list;
 	int length = 0;
 	int i = 0;
+	int j = 0;
 
 	va_start(list, format);
-	if (format)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+
+	while (format[i] != '\0')
 	{
-		while (format[i])
+		if (format[i] == '%')
 		{
-			length += _putchar(format[i]);
-            i++;
+			while (j < 3)
+			{
+				if (specifiers[j].specifier[0] == format[i] && specifiers[j].specifier[1] == format[i + 1])
+				{
+					length += specifiers[j].f(list);
+					i+= 2;
+					break;
+				}
+				j++;
+			}
 		}
+
+		_putchar(format[i]);
+		length++;
+		i++;
 	}
+
 	va_end(list);
 
 	return (length);
