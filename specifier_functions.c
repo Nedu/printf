@@ -46,3 +46,38 @@ int specifier_int(va_list list)
 
     return (length);
 }
+
+/**
+ * specifier_unsigned_int- Print an unsigned integer
+ * @list: input
+ *
+ * Return: Returns the length of the integer.
+ */
+int specifier_unsigned_int(va_list list)
+{
+    unsigned int i = va_arg(list, int), length = 0, div = 1;
+    unsigned int j;
+
+    if (i < 0)
+	{
+		return -1;
+	} 
+    else
+	{
+		j = i;
+	}
+
+	while (j / div > 9)
+    {
+		div *= 10;
+    }
+
+	while (div != 0)
+	{
+		length += _putchar('0' + j / div);
+		j %= div;
+		div /= 10;
+	}
+
+    return (length);
+}

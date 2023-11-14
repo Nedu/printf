@@ -21,5 +21,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int specifier_char(va_list list);
 int specifier_int(va_list list);
+int specifier_unsigned_int(va_list list);
 
 #endif
