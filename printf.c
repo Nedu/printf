@@ -44,14 +44,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			do
-			{
+			do {
 				if (specifiers[j].specifier[0] == format[i] &&
 				specifiers[j].specifier[1] == format[i + 1])
 				{
 					length += specifiers[j].f(list);
 					i += 2;
-					// break;
 				}
 				j++;
 			} while (j < 4);
