@@ -25,8 +25,16 @@ int _putchar(char c)
  */
 int _printf(const char *format, ...)
 {
+	specifier_t specifiers[] = {
+		{"%c", specifier_char},
+		{"%s", specifier_string},
+		{"%%", specifier_percent},
+		{"%d", specifier_int},
+		{"%i", specifier_int},
+		{"%u", specifier_unsigned_int}
+	};
 	va_list list;
-	int length = 0, i = 0;
+	int length = 0, i = 0, j = 0;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -34,7 +42,19 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-		
+		if (format[i] == '%')
+		{
+			do {
+				if (specifiers[j].specifier[0] == format[i] &&
+				specifiers[j].specifier[1] == format[i + 1])
+				{
+					length += specifiers[j].f(list);
+					i += 2;
+					break;
+				}
+				j++;
+			} while (j <= 5);
+		}
 
 		_putchar(format[i]);
 		length++;
