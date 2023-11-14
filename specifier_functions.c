@@ -23,6 +23,9 @@ int specifier_string(va_list list)
 	int i = 0, j = 0;
 	char *s = va_arg(list, char *);
 
+	if (s == NULL)
+		s = "(null)";
+
 	while (s[i] != '\0')
 	{
 		i++;
