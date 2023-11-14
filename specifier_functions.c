@@ -95,14 +95,7 @@ int specifier_unsigned_int(va_list list)
 	int i = va_arg(list, int), length = 0, div = 1;
 	unsigned int j;
 
-	if (i < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		j = i;
-	}
+	j = i;
 
 	while (j / div > 9)
 	{
