@@ -13,6 +13,43 @@ int specifier_char(va_list list)
 }
 
 /**
+ * specifier_string - Print a string
+ * @list: input
+ *
+ * Return: Returns the length of the character.
+ */
+int specifier_string(va_list list)
+{
+	int i = 0, j = 0;
+    char *s = va_arg(list, char *);
+
+    while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	for (j = 0; j < i; j++)
+	{
+		_putchar(s[j]);
+	}
+
+    return(j);
+}
+
+/**
+ * specifier_percent - Prints percent.
+ * @list: input
+ *
+ * Return: Returns the length of the character.
+ */
+int specifier_percent(va_list list)
+{
+    (void) list;
+	_putchar('%');
+    return (1);
+}
+
+/**
  * specifier_int- Print an integer
  * @list: input
  *

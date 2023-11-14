@@ -27,10 +27,10 @@ int _printf(const char *format, ...)
 {
 	specifier_t specifiers[] = {
 		{"%c", specifier_char},
-		// {"s", specifier_char},
+		{"%s", specifier_string},
+		{"%%", specifier_percent},
 		{"%d", specifier_int},
 		{"%i", specifier_int},
-		// {"b", specifier_char},
 		{"%u", specifier_unsigned_int}
 	};
 	va_list list;
