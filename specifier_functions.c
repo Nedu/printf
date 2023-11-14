@@ -9,7 +9,7 @@
 int specifier_char(va_list list)
 {
 	_putchar(va_arg(list, int));
-    return (1);
+	return (1);
 }
 
 /**
@@ -21,9 +21,9 @@ int specifier_char(va_list list)
 int specifier_string(va_list list)
 {
 	int i = 0, j = 0;
-    char *s = va_arg(list, char *);
+	char *s = va_arg(list, char *);
 
-    while (s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}
@@ -33,7 +33,7 @@ int specifier_string(va_list list)
 		_putchar(s[j]);
 	}
 
-    return(j);
+	return (j);
 }
 
 /**
@@ -44,9 +44,9 @@ int specifier_string(va_list list)
  */
 int specifier_percent(va_list list)
 {
-    (void) list;
+	(void) list;
 	_putchar('%');
-    return (1);
+	return (1);
 }
 
 /**
@@ -57,22 +57,22 @@ int specifier_percent(va_list list)
  */
 int specifier_int(va_list list)
 {
-    int i = va_arg(list, int), j, length = 0, div = 1;
+	int i = va_arg(list, int), j, length = 0, div = 1;
 
-    if (i < 0)
+	if (i < 0)
 	{
 		j = i * -1;
 		length += _putchar('-');
 	} 
-    else
+	else
 	{
 		j = i;
 	}
 
 	while (j / div > 9)
-    {
+	{
 		div *= 10;
-    }
+	}
 
 	while (div != 0)
 	{
@@ -81,7 +81,7 @@ int specifier_int(va_list list)
 		div /= 10;
 	}
 
-    return (length);
+	return (length);
 }
 
 /**
@@ -92,22 +92,22 @@ int specifier_int(va_list list)
  */
 int specifier_unsigned_int(va_list list)
 {
-    unsigned int i = va_arg(list, int), length = 0, div = 1;
-    unsigned int j;
+	unsigned int i = va_arg(list, int), length = 0, div = 1;
+	unsigned int j;
 
-    if (i < 0)
+	if (i < 0)
 	{
 		return -1;
 	} 
-    else
+	else
 	{
 		j = i;
 	}
 
 	while (j / div > 9)
-    {
+	{
 		div *= 10;
-    }
+	}
 
 	while (div != 0)
 	{
@@ -116,5 +116,5 @@ int specifier_unsigned_int(va_list list)
 		div /= 10;
 	}
 
-    return (length);
+	return (length);
 }

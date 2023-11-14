@@ -34,9 +34,7 @@ int _printf(const char *format, ...)
 		{"%u", specifier_unsigned_int}
 	};
 	va_list list;
-	int length = 0;
-	int i = 0;
-	int j = 0;
+	int length = 0, i = 0, j = 0;
 
 	va_start(list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
@@ -48,7 +46,8 @@ int _printf(const char *format, ...)
 		{
 			while (j < 4)
 			{
-				if (specifiers[j].specifier[0] == format[i] && specifiers[j].specifier[1] == format[i + 1])
+				if (specifiers[j].specifier[0] == format[i] &&
+				specifiers[j].specifier[1] == format[i + 1])
 				{
 					length += specifiers[j].f(list);
 					i+= 2;
@@ -64,6 +63,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(list);
-
 	return (length);
 }
