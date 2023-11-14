@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 /**
- * struct op - Struct op
+ * struct specifiers - Struct specifiers
  *
  * @specifier: The specifier
  * @f: The function associated
