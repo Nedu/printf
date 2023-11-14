@@ -92,7 +92,7 @@ int specifier_int(va_list list)
  */
 int specifier_unsigned_int(va_list list)
 {
-	int i = va_arg(list, int), length = 0, div = 1;
+	int i = va_arg(list, unsigned int), length = 0, div = 1;
 	unsigned int j;
 
 	j = i;
