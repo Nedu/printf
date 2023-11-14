@@ -63,7 +63,7 @@ int specifier_int(va_list list)
 	{
 		j = i * -1;
 		length += _putchar('-');
-	} 
+	}
 	else
 	{
 		j = i;
@@ -97,8 +97,8 @@ int specifier_unsigned_int(va_list list)
 
 	if (i < 0)
 	{
-		return -1;
-	} 
+		return (-1);
+	}
 	else
 	{
 		j = i;

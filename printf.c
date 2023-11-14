@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 				specifiers[j].specifier[1] == format[i + 1])
 				{
 					length += specifiers[j].f(list);
-					i+= 2;
+					i += 2;
 					break;
 				}
 				j++;
