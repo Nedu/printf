@@ -49,7 +49,10 @@ int _printf(const char *format, ...)
 				specifiers[j].specifier[1] == format[i + 1])
 				{
 					length += specifiers[j].f(list);
-					i += 2;
+					if (format[i + 2] != '\0' || format[i + 2] != 0)
+					{
+						i += 2;
+					}
 					break;
 				}
 				j++;
