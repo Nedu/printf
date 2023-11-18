@@ -58,7 +58,6 @@ int _printf(const char *format, ...)
 				j++;
 			} while (j <= 5);
 		}
-
 		_putchar(format[i]);
 		length++;
 		i++;
